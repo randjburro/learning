@@ -4,8 +4,12 @@ import App from './App.tsx'
 import './index.css'
 import client from '../src/apolloClient.ts';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './context/authContext.js';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Login from './pages/Login.tsx';
+import  Dashboard  from './pages/Dashboard.tsx';
+import LoginAdmin from './pages/LoginAdmin.tsx';
+
 
 
 // React application need access to..
@@ -13,17 +17,31 @@ import { AuthProvider } from './context/authContext.js';
 // Authorization context
 // Browser Router (React Router) /Login
 
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "/", element: <LoginAdmin /> },
+      { path: "/loginadmin", element: <LoginAdmin /> },
+      { path: "/login", element: <Login /> },
+      { path: "/dashboard", element: <Dashboard brands={[]} entityRole="admin" onAddSidebar={() => {}} onDelete={() => {}} /> },
+      
+    ],
+  },
+]);
+
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
- <AuthProvider>
+ 
   <ApolloProvider client={client}>
-    <BrowserRouter>
     <React.StrictMode>
     <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
-    </BrowserRouter>
-     
   </ApolloProvider>
- </AuthProvider>
+
  
  
 );

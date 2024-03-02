@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import LoginForm from '../components/LoginForm';
+import LoginImage from '../assets/image 6.png';
 
 type Props = {};
 
@@ -12,6 +14,12 @@ const Login = (props: Props) => {
   };
 
   return (
+    <>
+    <div className="flex max-h-screen  h-screen flex-row-reverse items-center justify-center bg-gray-100">
+    <div className="w-1/2 h-full max-h-full flex justify-center items-center">
+      <img src={LoginImage} alt="Logo" className="w-[300px] h-auto " />
+    </div>
+    <div className="w-1/2 max-h-full h-full flex justify-center items-center">
     <div className="w-1/2">
       <form onSubmit={handleSubmit} className="w-full max-w-xs">
         <h1 className="text-2xl font-bold text-left mb-4">Welcome back</h1>
@@ -55,6 +63,12 @@ const Login = (props: Props) => {
             </p>
       </form>
     </div>
+        
+   
+    </div>
+  </div>
+    
+    </>
   );
 };
 

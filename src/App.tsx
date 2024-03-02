@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import LoginAdmin from './LoginAdmin.tsx';
-import Dashboard from './Dashboard.tsx'
+import { Outlet, useLocation } from "react-router-dom";
+
 
 
 
@@ -11,8 +10,8 @@ function App() {
   return (
     <>
       <div>
-        <LoginAdmin />
-        
+      <Outlet />
+       
       </div>
       
     </>

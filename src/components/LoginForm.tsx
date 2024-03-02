@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import LoginImage from '../src/assets/image 6.png';
-import Login from './Login'; 
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
+type Props = {}
 
-const LoginAdmin: React.FC = () => {
+const LoginForm = (props: Props) => {
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showAdminLogin, setShowAdminLogin] = useState(true);
@@ -16,15 +17,9 @@ const LoginAdmin: React.FC = () => {
   const handleToggleForm = () => {
     setShowAdminLogin(!showAdminLogin);
   };
-
   return (
-    <div className="flex max-h-screen  h-screen flex-row-reverse items-center justify-center bg-gray-100">
-      <div className="w-1/2 h-full max-h-full flex justify-center items-center">
-        <img src={LoginImage} alt="Logo" className="w-[300px] h-auto " />
-      </div>
-      <div className="w-1/2 max-h-full h-full flex justify-center items-center">
-        {showAdminLogin ? (
-          <form onSubmit={handleSubmit} className="w-full h-full max-w-xs flex flex-col items-center justify-center">
+    <div>
+      <form onSubmit={handleSubmit} className="w-full h-full max-w-xs flex flex-col items-center justify-center">
             <h1 className="text-2xl font-bold text-left mb-4">Welcome back</h1>
           
             {/* login Admin form elements */}
@@ -53,22 +48,17 @@ const LoginAdmin: React.FC = () => {
             </button>
             <p className='text-start w-full text-xs text-black mt-2'>
               Not admin?{' '}
-              <a
-                href="#"
+            
+              <Link
+                to="/login"
                 className="text-blue-500 hover:underline"
-                onClick={handleToggleForm}
               >
                 <span className='text-black'>Login</span>  here
-              </a>
+              </Link>
             </p>
           </form>
-        ) : (
-          <Login />
-        )}
-      </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoginAdmin;
-
+export default LoginForm
