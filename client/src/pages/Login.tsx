@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import LoginForm from '../components/LoginForm';
 import LoginImage from '../assets/image 6.png';
 
 type Props = {};
