@@ -2,10 +2,11 @@ import React from "react";
 
 
 
+
 const DashboardSection = () => {
   return (
-    
-    <div className='flex justify-start h-[10%] items-center w-[100%]'>
+    <>
+    <div className='flex items-center w-[100%]'>
     <div className='h-[80%] w-[70%] px-4  bg-[#D9D9D9] text-black flex items-center justify-between '>
       <div>
         <span className='text-xl'>Admin 1</span>
@@ -34,7 +35,7 @@ const DashboardSection = () => {
     
     </div>
   </div>
-  )
+  </> )
 }
 
 export default DashboardSection

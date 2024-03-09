@@ -1,33 +1,34 @@
 import React from 'react';
-import StoreDashboardSection from '../components/StoreDashboardSection';
+import StoreSidebar from '../components/StoreSidebar';
+import StoreNavbar from '../components/StoreNavbar';
+
+
 
 const StoreDashboard = () => {
   return (
+    <>
     <div className="flex h-full">
-      {/* Sidebar */}
-      <div className="bg-[#292930] h-screen flex flex-col space-y-10 w-1/5 text-white p-4">
-        <button className="text-4xl font-semibold">Home</button>
-        <button className="text-4xl font-semibold">Employee</button>
-      </div>
+    {/* Sidebar */}
 
-      {/* DashboardSection on the right */}
-      <div className='flex mt-[90px] ml-[30px] gap-5 flex-col h-max-screen w-full p-6'>
-        <div className='text-4xl font-bold text-left'>
-          <h1 className='items-start '>Store Dashboard</h1>
-          <div className='flex justify-end'>
-          <button className='text-xl text-black mr-[350px] mb-20 items-center justify-end font-semibold min-w-[10%] rounded-lg bg-[#D9D9D9] p-2 ml-auto'>
-            Add
-          </button>
-          </div>
-          
-        </div>
-        <StoreDashboardSection />
-        <StoreDashboardSection />
-        <StoreDashboardSection />
-        <StoreDashboardSection />
-        <StoreDashboardSection />
-      </div>
-    </div>
+    <StoreSidebar sidebarToggle={false} />
+
+    {/* Navbar */}
+  
+       <StoreNavbar sidebarToogle={false} setSidebarToggle={() => {}} />
+       
+  
+   
+  
+
+   
+ 
+  </div>
+  
+   <div className='z-10 flex items-center justify-between w-[90%] h-[200px]'>
+    <h1 className='text-4xl font-bold mx-72 mb-16 items-center'>Store Dashboard</h1>
+    <button className='text-3xl bg-[#D9D9D9] text-black mr-16 py-3 px-16 rounded-lg'>Add</button>
+</div>
+</>
   );
 };
 
