@@ -10,6 +10,7 @@ import  AdminDashboard  from './pages/AdminDashboard.tsx';
 import LoginAdmin from './pages/LoginAdmin.tsx';
 import BrandDashboard from './pages/BrandDashboard.tsx';
 import StoreDashboard from './pages/StoreDashboard.tsx';
+import LoginTest from './pages/LoginTest.tsx';
 
 
 
@@ -27,12 +28,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <LoginAdmin /> },
+      { path: "/", element: <LoginTest /> },
       { path: "/loginadmin", element: <LoginAdmin /> },
       { path: "/login", element: <Login /> },
-      { path: "/admindashboard", element: <AdminDashboard brands={[]} entityRole="admin" onAddSidebar={() => {}} onDelete={() => {}} /> },
-      { path: "/branddashboard", element: <BrandDashboard brands={[]} entityRole="admin" onAddSidebar={() => {}} onDelete={() => {}} /> },
-      { path: "/storedashboard", element: <StoreDashboard brands={[]} entityRole="admin" onAddSidebar={() => {}} onDelete={() => {}} /> },
+      { path: "/admindashboard", element: <AdminDashboard /> },
+      { path: "/branddashboard", element: <BrandDashboard /> },
+      { path: "/storedashboard", element: <StoreDashboard  /> },
     ],
   },
 ]);
